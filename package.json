@@ -4,16 +4,28 @@
   "description": "Use vue3 vite typescript eslint SSR vuex vue-router element-plus scss",
   "author": "vok123",
   "scripts": {
-    "dev": "node server",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build --ssrManifest --outDir dist/client",
-    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
-    "serve": "cross-env NODE_ENV=production node server",
-    "preview": "npm run build && npm run serve"
+    "dev": "npm run lint && cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only server/main.ts",
+    "build": "npm run clean && npm run lint && npm run build:web && npm run build:server",
+    "preview": "npm run build && npm run serve",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "build:web:client": "vite build --ssrManifest --outDir dist/web/client",
+    "build:web:server": "vite build --ssr web/src/entry-server.js --outDir dist/web/server",
+    "build:web": "npm run build:web:client && npm run build:web:server",
+    "build:server": "tsc",
+    "serve": "cross-env NODE_ENV=production node dist/server/main.js",
+    "clean": "rimraf dist",
+    "lint": "eslint . --ext .js,.tsx,.ts,.vue --cache --color",
+    "lintfix": "eslint . --ext .js,.tsx,.ts,.vue --cache --color --fix",
+    "deploy": ""
   },
   "dependencies": {
+    "@nestjs/common": "^8.0.6",
+    "@nestjs/core": "^8.0.6",
+    "@nestjs/platform-express": "^8.0.6",
     "axios": "^0.21.1",
     "element-plus": "^1.0.2-beta.40",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.3.0",
     "vue": "^3.0.11",
     "vue-router": "^4.0.6",
     "vuex": "^4.0.0",
@@ -32,16 +44,32 @@
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
     "eslint": "^7.24.0",
-    "eslint-plugin-vue": "^7.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.16.0",
     "express": "^4.17.1",
+    "prettier": "^2.3.2",
     "sass": "^1.32.8",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.2.4",
     "vite": "^2.1.5",
-    "vite-plugin-eslint": "^1.1.0"
+    "vite-plugin-eslint": "^1.1.0",
+    "supervisor": "^0.12.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/vok123/vue3-ts-vite-ssr-starter.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{.ts,.tsx,.vue}": [
+      "eslint",
+      "git add"
+    ]
+  }
 }

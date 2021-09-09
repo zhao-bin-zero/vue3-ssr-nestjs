@@ -5,18 +5,17 @@ const vueJsxPlugin = require('@vitejs/plugin-vue-jsx');
 const vuePlugin = require('@vitejs/plugin-vue');
 
 export default {
-  port: 80,
   plugins: [
     vuePlugin(),
     vueJsxPlugin(),
     eslintPlugin({
       cache: false,
-      include: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.tsx']
+      include: ['web/src/**/*.vue', 'web/src/**/*.ts', 'web/src/**/*.tsx']
     })
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'web/src')
     }
   }
 } as UserConfig;

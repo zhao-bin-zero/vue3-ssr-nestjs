@@ -10,10 +10,10 @@ const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD;
 const isProduction = process.env.NODE_ENV === 'production';
 async function createServer(root = process.cwd(), isProd = isProduction) {
   const resolve = (p) => path.resolve(__dirname, p);
-  const indexProd = isProd ? fs.readFileSync(resolve('dist/client/index.html'), 'utf-8') : '';
+  const indexProd = isProd ? fs.readFileSync(resolve('dist/web/client/index.html'), 'utf-8') : '';
 
   // @ts-ignore
-  const manifest = isProd ? require('./dist/client/ssr-manifest.json') : {};
+  const manifest = isProd ? require('./dist/web/client/ssr-manifest.json') : {};
 
   const app = express();
 
@@ -31,11 +31,12 @@ async function createServer(root = process.cwd(), isProd = isProduction) {
   } else {
     app.use(require('compression')());
     app.use(
-      require('serve-static')(resolve('dist/client'), {
+      require('serve-static')(resolve('dist/web/client'), {
         index: false
       })
     );
   }
+  app.use('/public', express.static(path.join(__dirname, 'public')));
 
   app.use('/justTest/getFruitList', async (req, res) => {
     const names = ['Orange', 'Apricot', 'Apple', 'Plum', 'Pear', 'Pome', 'Banana', 'Cherry', 'Grapes', 'Peach'];
@@ -53,7 +54,6 @@ async function createServer(root = process.cwd(), isProd = isProduction) {
     };
     res.end(JSON.stringify(data));
   });
-
   app.use('*', async (req, res) => {
     try {
       const url = req.originalUrl;
@@ -63,11 +63,11 @@ async function createServer(root = process.cwd(), isProd = isProduction) {
         // always read fresh template in dev
         template = fs.readFileSync(resolve('index.html'), 'utf-8');
         template = await vite.transformIndexHtml(url, template);
-        render = (await vite.ssrLoadModule('/src/entry-server.js')).render;
+        render = (await vite.ssrLoadModule('/web/src/entry-server.js')).render;
       } else {
         template = indexProd;
         // @ts-ignore
-        render = require('./dist/server/entry-server.js').render;
+        render = require('./dist/web/server/entry-server.js').render;
       }
 
       const [appHtml, state, links] = await render(url, manifest);
@@ -90,8 +90,8 @@ async function createServer(root = process.cwd(), isProd = isProduction) {
 
 if (!isTest) {
   createServer().then(({ app }) =>
-    app.listen(80, () => {
-      console.log('http://localhost:80');
+    app.listen(8080, () => {
+      console.log('http://localhost:8080');
     })
   );
 }

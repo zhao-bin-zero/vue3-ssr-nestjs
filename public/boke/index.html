@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+        <link type="favicon" rel="shortcut icon" href="/favicon.ico" />
+            <title>51CTO博客-专业IT技术博客创作平台-技术成就梦想</title>
+        <meta name="keywords" content="51CTO博客,IT博客,技术博客,开发者社区,技术社区,网络工程师,运维工程师,程序员,开发者,程序猿,极客,码农,编程,代码,软件开发,开源,Developer,Coder,Geek,Coding,Code,科技博客,企业博客,大学生博客">
+    <meta name="description" content="51CTO博客是一个面向开发者、IT从业人员和大学生的IT技术博客创作平台及知识学习社区，坚信技术成就梦想，致力于让IT知识的分享和学习更高效、更便捷，帮助广大IT技术人实现成长和进步。IT博客创作，上51CTO！">    
+    <link href="./base.css" rel="stylesheet">
+    <link href="./header.css" rel="stylesheet">
+    <link href="./other.css" rel="stylesheet">
+    </head>
+    <body>
+    <style type="text/css">
+      .service-btn{
+        width: 53px;
+    height: 36px;
+    color: #1ac6fe;
+    line-height: 16px;
+    padding-top: 50px;
+        display: inline-block;
+        background: url(https://s4.51cto.com/images/blog/201811/02/463350acf4c693cfb3dc248bc8a2a0eb.png) no-repeat center;
+      }
+      .service-btn:hover{
+        background: url(https://s4.51cto.com/images/blog/201811/02/2d5fa2ff4eb9ef66847aff20ba4c8bae.png) no-repeat center;
+    height: 36px;
+    color: #fff;
+    line-height: 16px;
+    padding-top: 50px;
+      }
+        .special-column .column-1 .column-box .center a.h2{font-size:18px;}
+        .special-column .column-1 .column-box .center h5 span{font-size:14px;}
+        .Header .Navigates.fr li.login {
+          margin-right: 0;
+          padding-right: 0;
+          background: none;
+        }
+    </style>
+    <div class="Header" style="height:61px;">
+      <div class="Page clearfix ">
+          <div class="Logo"><a href="https://blog.51cto.com/"><img src="https://static1.51cto.com/edu/blog/images/logonew4.png" alt="51CTO博客" width="202" title="51CTO博客"><h1>51CTO博客</h1></a></div>
+          <ul class="Navigates fl  commonhide">
+          <li  class="cur" ><a href="https://blog.51cto.com/">首页</a></li>
+          <li ><a href="https://blog.51cto.com/nav/following">关注</a></li>
+            <li ><a href="https://blog.51cto.com/ranking">热榜</a></li>
+          <li class="">
+            <a  href="https://blog.51cto.com/cloumn/index" target="_blank">订阅专栏</a>
+          </li>
+    
+            <!-- <li>
+                <a href="https://edu.51cto.com/" target="_blank">大咖来了</a>
+            </li> -->
+                        
+                      </ul>
+        <ul class="Navigates Navigates-right fr">
+          <li class="more maps">
+            <a href="javascript:void(0);" class="menu"></a>
+            <div>
+              <div class="ins">
+    
+                <a href="https://edu.51cto.com/" target="_blank">学堂</a>
+                <a href="https://e.51cto.com/" target="_blank" rel="nofollow">精培</a>           
+                <a href="https://harmonyos.51cto.com?blogdaohang" target="_blank">鸿蒙社区</a>       
+                <a href="http://bbs.51cto.com/" target="_blank" rel="nofollow">论坛</a>
+                <a href="http://x.51cto.com" target="_blank" rel="nofollow">CTO训练营</a>           
+                <a href="http://www.51cto.com" target="_blank">51CTO</a>
+              </div>
+            </div>
+          </li>
+                  <li class="logins">
+              <a href="https://home.51cto.com/index?reback=https://blog.51cto.com/" target="_self" class="clearfix" rel="nofollow" ><span class="fl">登录</span><b class="fgline fl"></b><span class="fl">注册</span></a>
+            </li>
+                            <li class="mRead commonhide">
+                <a href="javascript:;" rel="nofollow"></a>
+                <div>
+                  <div class="ins">
+                      <div class="towD-box">
+                          <img src="https://static1.51cto.com/edu/blog/images/blog_qr.png">
+                          <p>手机随时阅读</p>
+                      </div>
+                      <div class="towD-box">
+                          <img src="https://s5.51cto.com/oss/202007/05/5a45016915218bb53e32af17b14a8822.jpg">
+                          <p>新人专享大礼包￥24</p>
+                      </div>
+                    </div>
+                </div>
+            </li>                  
+                      <li class="write  commonhide"><a href="javascript:;" onClick="Login()" rel="nofollow">写文章</a></li>
+                    <li class="search  commonhide">
+    
+              <form class="fr form-search" method='get' action="https://blog.51cto.com/search/result" target="_blank">
+                <input type="text" name="q"  placeholder="大家都在搜索..." id="TopSearchInput" autocomplete="off">
+                <button id="TopSearchBtn"></button>
+              </form>
+    
+              <div class="focusSelect focusSelect_his">
+    
+                  <div class="searchHistoryList">
+                    <div class="hishead clearfix">搜索历史 
+                      <span class="clearhis"><i class="iconblog blogshanchu18 "></i>清空</span>
+                    </div>
+                    <div class="hisitem-wrap"></div>
+                  </div>
+    
+                  <div class="hotList">
+                    <div class="hishead clearfix">热门搜索</div>
+                    <div class="hot-wrap"></div>
+                  </div>
+    
+              </div>
+    
+              <div class="focusSelect focusSelect_key" >
+                <div class="keyitem-wrap">
+                  
+                </div>
+                <div class="checkSearchResult clearfix">
+                  <span>查看【</span>
+                  <span class="checkKey"></span>
+                  <span>】的结果</span></div>
+              </div>
+    
+    
+            </li>
+              </ul>
+    
+              <div class="clear"></div>
+      </div>
+    </div>
+    <script src="https://static1.51cto.com/edu/blog/mobile/js/lib/box.js"></script> 
+    <script>
+        var isLogin = '0';
+        var userId = '';
+        var imgpath = 'https://s4.51cto.com/';
+        var BLOG_URL = 'https://blog.51cto.com/';
+        var YII_ENV = 'prod';
+        var msg_num_url = '/index/ajax-msg-num';
+        $('.msg-follow, .msg-follow-max').eq(1).css({top: '91px'});
+        $('.msg-follow, .msg-follow-max').eq(2).css({top: '121px'});
+        setTimeout(function(){
+                $.ajax({
+                    url:msg_num_url,
+                    type:"get",
+                    dataType:'json',
+                    success:function(res){
+                        if(res.status == '0'){
+                           //
+                           var hasNewMsg = false;
+                           if(res.data.msgNum > 0 && !$('#myMsg i').hasClass('dot')){
+                                $('#myMsg i').addClass('dot');
+                                hasNewMsg = true;
+                           }
+                           if(res.data.notifyNum > 0 && !$('#myNotify i').hasClass('dot')){
+                               $('#myNotify i').addClass('dot');
+                               hasNewMsg = true;
+                           }
+                           if(res.data.recommend_new > 0 && !$('#myRecommend i').hasClass('dot')){
+                               $('#myRecommend i').addClass('dot');
+                               hasNewMsg = true;
+                           }
+                           if(hasNewMsg && !$('#myAllMsg i').hasClass('dot')){
+                               $('#myAllMsg i').addClass('dot');
+                           }
+                        }
+    
+                    }
+                });
+        },70);
+        //广告图
+    </script>
+    
+     
+    <script>
+    var router = 'index/index'
+    <div class="new-home">
+        <div class="Page clearfix">
+            
+    <nav class="leftNav">
+        <a class="cur">推荐</a>    <a href="https://blog.51cto.com/nav">近期原创</a>                                 
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/ops">系统/运维</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/cloud">云计算</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/bigdata">大数据</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/ai">人工智能</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/python">Python</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/java">Java</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/harmonyos">HarmonyOS</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/program">编程语言</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/web">Web开发</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/database">数据库</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/server">服务器</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/sec">网络/安全</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/software">软件研发</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/certification">考试认证</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/mobile">移动开发</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/game">游戏开发</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/embedded">嵌入式</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/eim">企业信息化</a>
+                    </h2>
+                                             
+                                    <h2>
+                        <a  href="https://blog.51cto.com/nav/office">Office办公</a>
+                    </h2>
+                                        </nav>
+    
+    <script>
+        //处理左侧导航超出的情况
+        var navfix = $('.leftNav'), //导航外层容器，需要固定高度
+            navh = navfix.height(),
+            winH = $(window).height(),
+            ht = '90',  //fixwrap距离顶端的距离
+            bt = '50';  //导航距离底部的空隙
+        
+        function scrolly(){
+            //处理左侧定位兼容
+            navfix.css({'height':navh});
+            if (navh < winH - ht) return false;
+            //导航高度超出时，添加导航滚动
+            navfix.addClass('scrolly').css({'max-height':winH - ht - bt});
+            //处理左侧定位兼容
+            navfix.css({'height':$('.scrolly').height()});
+    
+        }
+        scrolly()
+    
+    
+    </script>        <section class="new-home-center">
+                <!--广告-start-->
+                <div style="width:1200px;margin:0 auto;">
+                    <style>
+                        .to-moveblog {
+                            background: url('https://static1.51cto.com/edu/blog/images/move/img1.png') no-repeat;
+                            background-size: contain;
+                            height: 111px;
+                            margin-bottom: 20px;
+                            padding-top: 20px;
+                            padding-left: 20px;
+                            box-sizing: border-box;
+                        }
+    
+                        .bj {
+                            font-size: 18px;
+                            color: #5685ec;
+                        }
+    
+                        .mv {
+                            font-size: 12px;
+                            color: #666666;
+                        }
+                    </style>
+                    <script type='text/javascript'>
+                        var m3_u = (location.protocol == 'https:' ? 'https://gg.51cto.com/www/delivery/ajs.php' :
+                            'http://gg2.51cto.com/www/delivery/ajs.php');
+                        var m3_r = Math.floor(Math.random() * 99999999999);
+                        if (!document.MAX_used) document.MAX_used = ',';
+                        document.write("<scr" + "ipt type='text/javascript' src='" + m3_u);
+                        document.write("?zoneid=983");
+                        document.write('&amp;cb=' + m3_r);
+                        if (document.MAX_used != ',') document.write("&amp;exclude=" + document.MAX_used);
+                        document.write(document.charset ? '&amp;charset=' + document.charset : (document.characterSet ?
+                            '&amp;charset=' + document.characterSet : ''));
+                        document.write("&amp;loc=" + escape(window.location));
+                        if (document.referrer) document.write("&amp;referer=" + escape(document.referrer));
+                        if (document.context) document.write("&context=" + escape(document.context));
+                        if (document.mmm_fo) document.write("&amp;mmm_fo=1");
+                        document.write("'></scr" + "ipt>");
+                    </script>
+                    <noscript>
+                        <a href='//gg.51cto.com/www/delivery/ck.php?n=ac8b447f&amp;cb=INSERT_RANDOM_NUMBER_HERE'
+                            target='_blank'>
+                            <img src='//gg3.51cto.com/www/delivery/avw.php?zoneid=983&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac8b447f'
+                                border='0' alt='' /></a>
+                    </noscript>
+                </div>
+                <!--广告-end-->
+                            <div class="Index">
+                                    <div class="keepOut" style="background-color: #f7f7f8;position: relative;">
+                                            <!-- Swiper -->
+                        <div class="swiper-container" id="homebanner">
+                            <div class="swiper-wrapper">
+                                                                                               
+                                <div class="swiper-slide"><a href="https://blog.51cto.com/yonhhui/3314829" target="_blank"><img src="https://s4.51cto.com/images/blog/202108/11/6563f21449627fca8da99c843ce2ab6a.png" alt="2"></a></div>
+                                                                   
+                                <div class="swiper-slide"><a href="https://blog.51cto.com/blogger/publish" target="_blank"><img src="https://s4.51cto.com/images/blog/202108/04/656152b80f8befd5420ad0be8bc1fc7f.png" alt="4"></a></div>
+                                                                   
+                                <div class="swiper-slide"><a href="https://blog.51cto.com/u_15280062/3327723" target="_blank"><img src="https://s4.51cto.com/images/blog/202108/11/f8937a247c427d1e7f27659b4e31ad62.png" alt="3"></a></div>
+                                                                   
+                                <div class="swiper-slide"><a href="https://blog.51cto.com/u_15285596/3254979" target="_blank"><img src="https://s4.51cto.com/images/blog/202108/03/c8c78f7b58a3fda25b770a63649e56b8.png" alt="1"></a></div>
+                                                                   
+                                <div class="swiper-slide"><a href="https://blog.51cto.com/51ctoblog/3333724" target="_blank"><img src="https://s4.51cto.com/images/blog/202107/21/0d13980df3c36ecf56754882603da574.png" alt="5"></a></div>
+                                                            
+                            </div>
+                              <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                
+                                            <article class="aList">
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/loong576/3366775" target="_blank"
+                                                title="NBU一体化备份报表服务器邮件通知设置">
+                                            NBU一体化备份报表服务器邮件通知设置                                        </a>
+                                            <a href="https://blog.51cto.com/nav/linux/push" target="_blank" class="tag">Linux</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/loong576/3366775" target="_blank"
+                                                title="NBU一体化备份报表服务器邮件通知设置" class="con">
+                                            本文详细介绍了如何在NBU一体化备份的报表服务器上配置邮件通知。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/loong576" target="_blank">loong576</a>
+                                                <i class="dot"></i>
+                                                <span class="time">1小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    124                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/panyujie/3366280" target="_blank"
+                                                title="【C语言进阶】——指针（一）  (字符指针，数组指针，指针数组)   ！!">
+                                            【C语言进阶】——指针（一）  (字符指针，数组指针，指针数组)   ！!                                        </a>
+                                            <a href="https://blog.51cto.com/nav/c-cpp/push" target="_blank" class="tag">C/C++</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/panyujie/3366280" target="_blank"
+                                                title="【C语言进阶】——指针（一）  (字符指针，数组指针，指针数组)   ！!" class="con">
+                                            本章写对字符指针，指针数组，数组指针的用法和练习心得，指针是个美妙的东西，令人头秃                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/panyujie" target="_blank">Perceus</a>
+                                                <i class="dot"></i>
+                                                <span class="time">1小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    968                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15219956/3365300" target="_blank"
+                                                title="MySql表的基础命令及数据操作命令">
+                                            MySql表的基础命令及数据操作命令                                        </a>
+                                            <a href="https://blog.51cto.com/nav/java/push" target="_blank" class="tag">Java</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15219956/3365300" target="_blank"
+                                                title="MySql表的基础命令及数据操作命令" class="con">
+                                            ​
+     一、MySQL关于表基础命令
+    1.1 表的创建
+    语法： create table if not exists 表名 ( 字段名 数据类型（null | not null，default | auto_increment，primary key，comment，varchar，）， 字段名 数据类型 ... ) engine=存储引擎 charset=字符编码
+    数据类型
+    含义
+    null，not                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15219956" target="_blank">守夜人爱吃兔子</a>
+                                                <i class="dot"></i>
+                                                <span class="time">1小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    120                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_13778063/3362925" target="_blank"
+                                                title="当容器应用越发广泛，我们又该如何监测容器？">
+                                            当容器应用越发广泛，我们又该如何监测容器？                                        </a>
+                                            <a href="https://blog.51cto.com/nav/cloud1/push" target="_blank" class="tag">其他</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_13778063/3362925" target="_blank"
+                                                title="当容器应用越发广泛，我们又该如何监测容器？" class="con">
+                                            作者 | 白玙
+    随着容器技术蓬勃发展与落地推行，越来越多企业的业务运行于容器中。作为主流部署方式之一，容器将团队的任务和关注点分割开，开发团队只需关注应用程序逻辑和依赖项，而运维团队只需关注部署和管理，无需再为特定软件版本和应用程序特定配置等应用程序细节而提心吊胆。这意味着开发团队和运维团队可以花费更少时间进行调试上线，将更多时间用于向最终用户交付新功能。容器使企业可以更加轻松的提高应用程序可移植                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_13778063" target="_blank">阿里巴巴云原生</a>
+                                                <i class="dot"></i>
+                                                <span class="time">2小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    131                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_14815220/3362172" target="_blank"
+                                                title="这么递名片才高效！教你给应用开发个交换名片功能">
+                                            这么递名片才高效！教你给应用开发个交换名片功能                                        </a>
+                                            <a href="https://blog.51cto.com/nav/android/push" target="_blank" class="tag">Android</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_14815220/3362172" target="_blank"
+                                                title="这么递名片才高效！教你给应用开发个交换名片功能" class="con">
+                                            在工作和生活中，遇见新的同事或者合作伙伴，交换名片是一个常见的用户需求，纸质名片常忘带、易丢失，是客户的一个痛点。因此，市场上出现了很多交换电子名片的APP和小程序。那么，如何给自己的APP开发一个名片交换功能呢？!(https://s4.51cto.com/images/blog/202108/11/c4f47511f6da1cd98a5b890bae11e10f.jpeg?xossproces                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_14815220" target="_blank">华为HMSCore</a>
+                                                <i class="dot"></i>
+                                                <span class="time">3小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    211                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15316473/3362027" target="_blank"
+                                                title="知乎李大海对话阿里云贾扬清：透视AI应用难题与未来趋势">
+                                            知乎李大海对话阿里云贾扬清：透视AI应用难题与未来趋势                                        </a>
+                                            <a href="https://blog.51cto.com/nav/industry/push" target="_blank" class="tag">IT业界</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15316473/3362027" target="_blank"
+                                                title="知乎李大海对话阿里云贾扬清：透视AI应用难题与未来趋势" class="con">
+                                             “AI行业接下来可能有哪些发展？” “一线从业者如何看待其中的机会？”知乎合伙人、CTO李大海与阿里巴巴副总裁、阿里云智能高级研究员贾扬清亮相知乎直播，与网友分享了他们对AI时代下行业趋势、技术应用、个人成长等多个层面的洞察和思考。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15316473" target="_blank">阿里云大数据AI技术</a>
+                                                <i class="dot"></i>
+                                                <span class="time">3小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    119                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15214399/3360775" target="_blank"
+                                                title="5招教你实现多线程场景下的线程安全">
+                                            5招教你实现多线程场景下的线程安全                                        </a>
+                                            <a href="https://blog.51cto.com/nav/java/push" target="_blank" class="tag">Java</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15214399/3360775" target="_blank"
+                                                title="5招教你实现多线程场景下的线程安全" class="con">
+                                            多线程（并发）场景下，如何编写线程安全（Thread-Safety）的程序，对于程序的正确和稳定运行有重要的意义。下面将结合示例，谈谈如何在Java语言中，实现线程安全的程序。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15214399" target="_blank">华为云开发者社区</a>
+                                                <i class="dot"></i>
+                                                <span class="time">3小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    157                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_13950323/3360339" target="_blank"
+                                                title="Nginx+ModSecurity安全模块部署">
+                                            Nginx+ModSecurity安全模块部署                                        </a>
+                                            <a href="https://blog.51cto.com/nav/linux/push" target="_blank" class="tag">Linux</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_13950323/3360339" target="_blank"
+                                                title="Nginx+ModSecurity安全模块部署" class="con">
+                                            为演示已安装Nginx而未添加ModSecurity的情况，以下操作为先安装Nginx，后添加ModSecurity模块。ModSecurity是一个开源的跨平台Web应用程序防火墙（WAF）引擎，，完美兼容nginx，是nginx官方推荐的WAF，并且支持支持OWASP规则。中文网站：http://www.modsecurity.cn应用实战可参考：http://www.modsecurity.                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_13950323" target="_blank">逝月流</a>
+                                                <i class="dot"></i>
+                                                <span class="time">3小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    136                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15310909/3360328" target="_blank"
+                                                title="字节架构师：来说说Java异步调用的几种方式你都搞懂了吗？">
+                                            字节架构师：来说说Java异步调用的几种方式你都搞懂了吗？                                        </a>
+                                            <a href="https://blog.51cto.com/nav/java/push" target="_blank" class="tag">Java</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15310909/3360328" target="_blank"
+                                                title="字节架构师：来说说Java异步调用的几种方式你都搞懂了吗？" class="con">
+                                            !(https://s4.51cto.com/images/blog/202108/11/fdfbf661db4664f6ad3d7d8a503fe041.jpeg?xossprocess=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15310909" target="_blank">一只程序名媛</a>
+                                                <i class="dot"></i>
+                                                <span class="time">3小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    125                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15159105/3359299" target="_blank"
+                                                title="你要悄悄学习3D城市，然后惊艳所有人（4）">
+                                            你要悄悄学习3D城市，然后惊艳所有人（4）                                        </a>
+                                            <a href="https://blog.51cto.com/nav/ops1/push" target="_blank" class="tag">其他</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15159105/3359299" target="_blank"
+                                                title="你要悄悄学习3D城市，然后惊艳所有人（4）" class="con">
+                                            
+    3D城市搭建过程中需要不同的效果来实现不同的功能，如添加水系、道路、热力图等。这时候就需要了解CityBuilder的图层类型了，图层类型分为点图层、线图层和面图层。不同类型的图层，可调节的图层样式有所不同。
+    
+    点图层
+    
+    点图层由带有地理位置（coordinates）的点要素构成。点图层基础样式有常规点和热力图，可以将矢量符号、图片、模型表现在3D地图中。可以用于添加并显示城市地标、地铁站、热力                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15159105" target="_blank">ThingJS优锘</a>
+                                                <i class="dot"></i>
+                                                <span class="time">4小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    124                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_14825302/3358859" target="_blank"
+                                                title="【Python入门练手小项目】童年最爱看的动画片之海绵宝宝和派大星❤️">
+                                            【Python入门练手小项目】童年最爱看的动画片之海绵宝宝和派大星❤️                                        </a>
+                                            <a href="https://blog.51cto.com/nav/python/push" target="_blank" class="tag">Python</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_14825302/3358859" target="_blank"
+                                                title="【Python入门练手小项目】童年最爱看的动画片之海绵宝宝和派大星❤️" class="con">
+                                            海绵宝宝
+    工具使用
+    开发工具：pycharm 开发环境：python3.7， Windows10 使用工具包：turtle
+    效果展示
+    
+    项目思路解析
+    明确turtle基本配置，然后我们在确定画框的高度以及画笔的大小，还有对应画框标题和画笔运行的速度。
+        screensize(800, 600, 'white')
+        pensize(3)
+        title('海绵宝宝')
+        spe                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_14825302" target="_blank">悦悦学Python</a>
+                                                <i class="dot"></i>
+                                                <span class="time">4小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    124                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15146321/3358068" target="_blank"
+                                                title="由美团文章“一款可以让大型iOS工程编译速度提升50%的工具”引出的.hmap文件（下）hmap落地">
+                                            由美团文章“一款可以让大型iOS工程编译速度提升50%的工具”引出的.hmap文件（下）hmap落地                                        </a>
+                                            <a href="https://blog.51cto.com/nav/ios/push" target="_blank" class="tag">iOS</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15146321/3358068" target="_blank"
+                                                title="由美团文章“一款可以让大型iOS工程编译速度提升50%的工具”引出的.hmap文件（下）hmap落地" class="con">
+                                            !(https://s4.51cto.com/images/blog/202108/11/4d6b30b2de09980a9d39eb546f04a8be.png?xossprocess=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15146321" target="_blank">iOS是大鑫呀</a>
+                                                <i class="dot"></i>
+                                                <span class="time">4小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    129                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/harmonyos/3358032" target="_blank"
+                                                title="HarmonyOS列表组件-ListContainer">
+                                            HarmonyOS列表组件-ListContainer                                        </a>
+                                            <a href="https://blog.51cto.com/nav/ops1/push" target="_blank" class="tag">其他</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/harmonyos/3358032" target="_blank"
+                                                title="HarmonyOS列表组件-ListContainer" class="con">
+                                            我们在app开发中，列表组件绝对是使用场景最高的组件之一，鸿蒙为我们提供了ListContainer列表组件，它是一个是用来呈现连续、多行数据的组件，继承自ComponentContainer，因此它是一个容器组件，使用BaseItemProvider来存储对象。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/harmonyos" target="_blank">HarmonyOS技术社区</a>
+                                                <i class="dot"></i>
+                                                <span class="time">4小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    225                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/leonsh/3357509" target="_blank"
+                                                title="简单了解 MySQL 中相关的锁">
+                                            简单了解 MySQL 中相关的锁                                        </a>
+                                            <a href="https://blog.51cto.com/nav/mysql/push" target="_blank" class="tag">MySQL</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/leonsh/3357509" target="_blank"
+                                                title="简单了解 MySQL 中相关的锁" class="con">
+                                            本文主要是带大家快速了解InnoDB中锁相关的知识为什么需要加锁首先，为什么要加锁？我想我不用多说了，想象接下来的场景你就能GET了。你在商场的卫生间上厕所，此时你一定会做的操作是啥？锁门。如果不锁门，上厕所上着上着，啪一下门就被打开了，可能大概也许似乎貌似有那么一丁点的不太合适。数据也是一样，在并发的场景下，如果不对数据加锁，会直接破坏数据的一致性，并且如果你的业务涉及到钱，那后果就更严重了。锁                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/leonsh" target="_blank">SH的全栈笔记</a>
+                                                <i class="dot"></i>
+                                                <span class="time">4小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    434                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15153979/3357499" target="_blank"
+                                                title="顺势而为 | 全民健康催生 3D 智慧体育馆掀起建设新热潮">
+                                            顺势而为 | 全民健康催生 3D 智慧体育馆掀起建设新热潮                                        </a>
+                                            <a href="https://blog.51cto.com/nav/project-management/push" target="_blank" class="tag">项目管理</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15153979/3357499" target="_blank"
+                                                title="顺势而为 | 全民健康催生 3D 智慧体育馆掀起建设新热潮" class="con">
+                                            利用 Hightopo 的产品 HT 可视化技术将监控系统与其他子系统（如报警、灯光、扩声等系统）联动可视，有效保证场馆的安全运营。HT 可视化让 3D 场景与 2D 数据面板完美地融合呈现。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15153979" target="_blank">物联网鲸鱼</a>
+                                                <i class="dot"></i>
+                                                <span class="time">4小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    122                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/rjgx/3355501" target="_blank"
+                                                title="算法中的概率算法基本思想">
+                                            算法中的概率算法基本思想                                        </a>
+                                            <a href="https://blog.51cto.com/nav/c-cpp/push" target="_blank" class="tag">C/C++</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/rjgx/3355501" target="_blank"
+                                                title="算法中的概率算法基本思想" class="con">
+                                            概率算法依照概率统计的思路来求解问题，往往不能得到问题的精确解，但却在数值计算物生得到了广泛的应用。因为很多数学问题，往往没有或者很难计算解析解，这时便需要通过数值计算来求解近似值。
+    概率算法基本思想
+    概率算法执行的基本过程如下:
+    (1)将问题转化为相应的几何图形s, S的面积是容易计算的，问题的结果往往对应几何图形中某一部分S1的面积。
+    (2)然后，向几何图形中随机撒点。
+    (3)统计几何图形S和                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/rjgx" target="_blank">好好学好好看</a>
+                                                <i class="dot"></i>
+                                                <span class="time">6小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    133                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15232255/3355134" target="_blank"
+                                                title="uni-app技术分享| 怎么用uni-app实现呼叫邀请">
+                                            uni-app技术分享| 怎么用uni-app实现呼叫邀请                                        </a>
+                                            <a href="https://blog.51cto.com/nav/mobile1/push" target="_blank" class="tag">其他</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15232255/3355134" target="_blank"
+                                                title="uni-app技术分享| 怎么用uni-app实现呼叫邀请" class="con">
+                                            uni-app呼叫邀请技术分享                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15232255" target="_blank">anyRTC</a>
+                                                <i class="dot"></i>
+                                                <span class="time">7小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    127                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15191752/3354797" target="_blank"
+                                                title="存储性能加速引擎之预读">
+                                            存储性能加速引擎之预读                                        </a>
+                                            <a href="https://blog.51cto.com/nav/cloud-platform/push" target="_blank" class="tag">云平台</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15191752/3354797" target="_blank"
+                                                title="存储性能加速引擎之预读" class="con">
+                                            顺序预读（prefetch，在Linux中也称为预读，read ahead）是一种用于提升顺序读性能的技术，用于缩小存储设备和应用程序之间巨大的效率差距。Linux内核在通用预读框架中执行顺序文件预读，它主动拦截VFS层中的文件读取请求，并将顺序的请求转换为异步预读请求，为即将到来的请求引入数据块，并在大块中进行。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15191752" target="_blank">YRCloudFile</a>
+                                                <i class="dot"></i>
+                                                <span class="time">7小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    124                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_7932852/3354372" target="_blank"
+                                                title="【插画】一文看懂容器k8s">
+                                            【插画】一文看懂容器k8s                                        </a>
+                                            <a href="https://blog.51cto.com/nav/docker/push" target="_blank" class="tag">Docker</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_7932852/3354372" target="_blank"
+                                                title="【插画】一文看懂容器k8s" class="con">
+                                            本篇翻译官方英文的插画版内容，插画版指南生动形象，更好的帮助理解k8s。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_7932852" target="_blank">恒生LIGHT云社区</a>
+                                                <i class="dot"></i>
+                                                <span class="time">7小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    217                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15273780/3354235" target="_blank"
+                                                title="零代码上线小布对话技能：技能平台的实践与思考">
+                                            零代码上线小布对话技能：技能平台的实践与思考                                        </a>
+                                            <a href="https://blog.51cto.com/nav/deep-learning/push" target="_blank" class="tag">深度学习</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15273780/3354235" target="_blank"
+                                                title="零代码上线小布对话技能：技能平台的实践与思考" class="con">
+                                            本文是揭秘 OPPO 智能助手小布助手背后技术的第四篇，主要介绍小布技能平台的实践与思考。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15273780" target="_blank">OPPO小布助手</a>
+                                                <i class="dot"></i>
+                                                <span class="time">7小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    269                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15269973/3352232" target="_blank"
+                                                title="为构建大型复杂系统而生的微服务框架 Erda Infra">
+                                            为构建大型复杂系统而生的微服务框架 Erda Infra                                        </a>
+                                            <a href="https://blog.51cto.com/nav/ops1/push" target="_blank" class="tag">其他</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15269973/3352232" target="_blank"
+                                                title="为构建大型复杂系统而生的微服务框架 Erda Infra" class="con">
+                                            Erda Infra 微服务框架是从 Erda 项目演进而来，并且完全开源。Erda 基于 Erda Infra 框架完成了大型复杂项目的构建。本文将全面、深入地剖析 Erda Infra 框架的架构设计以及如何使用。                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15269973" target="_blank">尔达Erda</a>
+                                                <i class="dot"></i>
+                                                <span class="time">8小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    251                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15083739/3351980" target="_blank"
+                                                title="零基础学Java|详解Java中的static关键字（下）">
+                                            零基础学Java|详解Java中的static关键字（下）                                        </a>
+                                            <a href="https://blog.51cto.com/nav/java/push" target="_blank" class="tag">Java</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15083739/3351980" target="_blank"
+                                                title="零基础学Java|详解Java中的static关键字（下）" class="con">
+                                            
+    接上篇Java-static关键字（上），今天继续写完static的部分，主要内容：
+    Java static静态代码块
+    Java static静态方法
+    Java static静态代码块
+    静态代码块的语法格式是这样的：
+    类{
+    //静态代码块
+    static{
+    java语句;
+    }
+    }
+    静态代码块在类加载时执行，并且只执行一次。开发中使用不多，但离了它有的时候还真是没法写代码。
+    静态代码块实际上是jav                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15083739" target="_blank">link可</a>
+                                                <i class="dot"></i>
+                                                <span class="time">8小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    171                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_11256213/3351552" target="_blank"
+                                                title="netty系列之:使用POJO替代buf">
+                                            netty系列之:使用POJO替代buf                                        </a>
+                                            <a href="https://blog.51cto.com/nav/java/push" target="_blank" class="tag">Java</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_11256213/3351552" target="_blank"
+                                                title="netty系列之:使用POJO替代buf" class="con">
+                                            简介
+    在之前的文章中我们提到了，对于NioSocketChannel来说，它不接收最基本的string消息，只接收ByteBuf和FileRegion。但是ByteBuf是以二进制的形式进行处理的，对于程序员来说太不直观了，处理起来也比较麻烦，有没有可能直接处理java简单对象呢？本文将会探讨一下这个问题。
+    decode和encode
+    比如我们需要直接向channel中写入一个字符串，在之前的文章                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_11256213" target="_blank">程序那些事</a>
+                                                <i class="dot"></i>
+                                                <span class="time">8小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    229                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_11418075/3350926" target="_blank"
+                                                title="获取异常信息里再出异常就找不到日志了，我TM人傻了">
+                                            获取异常信息里再出异常就找不到日志了，我TM人傻了                                        </a>
+                                            <a href="https://blog.51cto.com/nav/java/push" target="_blank" class="tag">Java</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_11418075/3350926" target="_blank"
+                                                title="获取异常信息里再出异常就找不到日志了，我TM人傻了" class="con">
+                                            本系列是我TM人傻了系列第三期捂脸，往期精彩回顾：升级到Spring5.3.x之后，GC次数急剧增加，我TM人傻了(https://zhuanlan.zhihu.com/p/397042565)这个大表走索引字段查询的SQL怎么就成全扫描了，我TM人傻了(https://zhuanlan.zhihu.com/p/397271448)!image(https://s4.51cto.com/image                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_11418075" target="_blank">zhxdick</a>
+                                                <i class="dot"></i>
+                                                <span class="time">8小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    161                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_13646489/3350276" target="_blank"
+                                                title="PostgreSQL数据库修改行外存储（TOAST）可能遇到的坑">
+                                            PostgreSQL数据库修改行外存储（TOAST）可能遇到的坑                                        </a>
+                                            <a href="https://blog.51cto.com/nav/sqlserver/push" target="_blank" class="tag">SQL Server</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_13646489/3350276" target="_blank"
+                                                title="PostgreSQL数据库修改行外存储（TOAST）可能遇到的坑" class="con">
+                                            
+    PostgreSQL使用固定的页面大小，并且不允许元组跨越多个页面。为了存储大数据，PG引入了TOAST技术-The Oversized-Attribute Storage Technique。这种技术在底层将大的数据压缩或分解成多个物理行，并且这些处理对用户都是无感的。数据库会默认为各类数据类型应用不同的存储类型。对列的存储类型不满意时也可以进行修改。修改列的存储类型的语句是：
+    
+    
+    ALTER                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_13646489" target="_blank">瀚高实验室</a>
+                                                <i class="dot"></i>
+                                                <span class="time">9小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    151                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/wuweijava/3348737" target="_blank"
+                                                title="Veeam 实用工具">
+                                            Veeam 实用工具                                        </a>
+                                            <a href="https://blog.51cto.com/nav/virtual/push" target="_blank" class="tag">虚拟化</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/wuweijava/3348737" target="_blank"
+                                                title="Veeam 实用工具" class="con">
+                                            本文主要介绍veeam提供的三个实用工具，分别是备份验证工具，数据库配置工具，备份提取工具                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/wuweijava" target="_blank">wuweijava</a>
+                                                <i class="dot"></i>
+                                                <span class="time">9小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    169                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15288108/3348659" target="_blank"
+                                                title="浅析企业级应用系统：ERP">
+                                            浅析企业级应用系统：ERP                                        </a>
+                                            <a href="https://blog.51cto.com/nav/erp/push" target="_blank" class="tag">ERP</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15288108/3348659" target="_blank"
+                                                title="浅析企业级应用系统：ERP" class="con">
+                                            ​  公司发展的需求，会促使企业级的改进，扬长补短，提高效率。ERP是企业级改进的手段之一。
+      什么是ERP？ERP与我们何干？什么时候上ERP？怎么上ERP？...本文先抛个砖。
+      1  ERP是什么？官方字面说明：Enterprise(企业)，Resource(资源)，Planning(计划)，没错，ERP的专业中文术语就是“企业资源计划”。
+      再拆细一点，Enter(进入、输入)，pr                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15288108" target="_blank">Zhou2021</a>
+                                                <i class="dot"></i>
+                                                <span class="time">10小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    176                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15281954/3348436" target="_blank"
+                                                title="九章算法班 2021 版">
+                                            九章算法班 2021 版                                        </a>
+                                            <a href="https://blog.51cto.com/nav/python/push" target="_blank" class="tag">Python</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15281954/3348436" target="_blank"
+                                                title="九章算法班 2021 版" class="con">
+                                            九章算法班 2021 版学习分享总结                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15281954" target="_blank">分享薇_yofank</a>
+                                                <i class="dot"></i>
+                                                <span class="time">18小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    149                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_15313627/3348398" target="_blank"
+                                                title="JavaScript 中的高阶函数">
+                                            JavaScript 中的高阶函数                                        </a>
+                                            <a href="https://blog.51cto.com/nav/javascript/push" target="_blank" class="tag">JavaScript</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_15313627/3348398" target="_blank"
+                                                title="JavaScript 中的高阶函数" class="con">
+                                            高阶函数JavaScript高阶函数是指以函数作为参数的函数，并且可以将函数作为结果返回的函数。1.高阶函数接受一个或多个函数作为输入输出一个函数至少满足以上一个条件的函数在js的内置对象中同样存在着一些高阶函数，像数组的map，filter，reduce方法等，它们接受一个函数作为参数，并应用这个函数到列表的每一个元素1.1mapmap方法接收一个函数作为参数，遍历数组，并且返回一个新的数组，新                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_15313627" target="_blank">丞丞同学</a>
+                                                <i class="dot"></i>
+                                                <span class="time">19小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    271                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="float-section">
+                                <div class="float-inner">
+                                    <div class="spacing">
+                                        <strong class="clearfix">
+                                            <a href="https://blog.51cto.com/u_11520563/3348257" target="_blank"
+                                                title="涨姿势啦！Java程序员装X必备词汇之对象标记Mark Word！">
+                                            涨姿势啦！Java程序员装X必备词汇之对象标记Mark Word！                                        </a>
+                                            <a href="https://blog.51cto.com/nav/java/push" target="_blank" class="tag">Java</a>
+                                        </strong>
+                                           
+                                        <a href="https://blog.51cto.com/u_11520563/3348257" target="_blank"
+                                                title="涨姿势啦！Java程序员装X必备词汇之对象标记Mark Word！" class="con">
+                                            写在前面如果你已经知道什么是MarkWord，那我也希望你都好好阅读下本篇文章，因为你有可能发现不一样的切入点来帮助你更加深入的了解MarkWord，这对你来说是个很好的巩固所学知识的机会，同时也是一场技术交流，一个有逼格的程序员应该不会错过这样的机会吧！​如果你还不知道什么是MarkWord，那你更要好好阅读本篇文章了，因为MarkWord不仅是一个可以让你用来装X的词汇，实际上它是一个非常重要                                    </a>
+    
+    
+                                  
+                                        <!-- intro -->
+                                         <div class="intro clearfix">
+                                                                                     <a class="type type_recommend">推荐</a>
+                                                                                                                             <a class="type type_original">原创</a>
+                                                                                    <div class="infonum infonum_user">
+                                                <a class="name" href="https://blog.51cto.com/u_11520563" target="_blank">庆哥Java</a>
+                                                <i class="dot"></i>
+                                                <span class="time">21小时前</span>
+                                            </div>
+                                            
+                                            <div class="infonum">
+                                                <span class="read_num">
+                                                                                                    290                                                                                            </span>阅读
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="comment_num">
+                                                                                                    1                                                                                            </span>点赞
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="collect_num">
+                                                                                                </span>评论
+                                            </div>
+                                            <i class="dot"></i>
+                                            <div class="infonum">
+                                                <span class="admire_num">
+                                                                                                </span>收藏
+                                            </div>
+                                        </div>
+                                        <!-- //intro -->
+                                    </div>
+                                </div>
+                            </div>
+                                                                     </article>
+                    </div>
+                    <!-- //keepOut end -->
+                </div>
+                <!-- // Content end -->
+            </section>
+            <!-- //new-home-center end -->
+    
+            
+    <script>
+        //推荐作者的关注状态
+        function FollowBtnSucc(e) { //1:未关注,2:已关注,3:互相关注
+            if (e == 2 || e == 3) {
+                $.post('/index/wxbind', {
+                    uid: userId
+                }, function (res) {
+                    if (res.status == 1) {
+                        if (res.data.wxBind == 0) { //没绑定
+                            if (getCookie('follow1')) return false;
+                            box1()
+                        } else {
+                            if (getCookie('follow2')) return false;
+                            box2()
+                        }
+                    }
+                }, 'json')
+            }
+        }
+    </script>
+    
+    <aside class="Right">
+        <!-- 我要写文章 -->
+        <div class="iWantWrite yes">
+            <span class="pen">
+                            <a href="/creative-center/manager" target="_blank">记录自己的技术轨迹</a>
+                        </span>
+                        <a href="javascript:;" onClick="Login()" class="want-write" ><i class="penicon"></i>我要写文章</a>
+            
+    
+        </div>
+    
+        <!-- 公告-->
+        <div class="Box" style="padding-bottom:11px;">
+            <span class="News_tag">公告</span>
+            <ul class="News">
+                                        <li class="set"><a href="https://blog.51cto.com/blogger/publish" target="_blank"  >活动！！#导入MD文档#</a></li>
+                            <li class=""><a href="https://blog.51cto.com/51ctoblog/2884579" target="_blank"  >编辑器优化意见征集！</a></li>
+                            <li class=""><a href="https://blog.51cto.com/51ctoblog/2633600?gg" target="_blank"  >51CTO可开通企业博客认证啦！</a></li>
+                            <li class=""><a href="https://blog.51cto.com/51ctoblog/3272786" target="_blank"  >【7.26-8.1】上周精彩回顾</a></li>
+                                    </ul>
+        </div>
+    
+        <!-- 博客搬家入口 -->
+            <a href="/creative-center/move" target="_blank" rel="noopener noreferrer" >
+                <div class="to-moveblog"></div>
+            </a>
+    
+        <!-- 热门活动 -->
+        
+        <!-- 推荐作者 start  follw.js 关注逻辑不变-->
+            <div class="Box Box-tong">
+            <h3 class="Box-tit Box-tit-tong">
+                推荐作者
+                <a href="https://blog.51cto.com/expert" target="_blank" class="more">
+                    <i>更多</i>
+                    <span class="hover-arr"></span>
+                </a>
+            </h3>
+            <ul>
+                            <li class="follow-item clearfix">
+                    <a class="pic fl" href="https://blog.51cto.com/wangchunhai" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="225186" src="https://s4.51cto.com/wyfs02/M01/9B/88/wKioL1lkQ8DAfn7aAAAQeoHYK_o204.jpg" />
+                    </a>
+    
+                    <div class="main">
+                        <h4>
+                            <a href="https://blog.51cto.com/wangchunhai" target="_blank">王春海</a>
+                                                                            <a id="checkFollow_225186" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+                        <div class="follow-data">
+                            3169.2万&nbsp;人气&nbsp;·&nbsp;743&nbsp;原创&nbsp;·&nbsp;2775&nbsp;赞
+                        </div>
+                    </div>
+    
+                </li>
+                <script>
+                    FollowBtn = new Follow($('#checkFollow_225186'),'225186','1',['on','in','mutual','off'])
+                    FollowBtn.success=FollowBtnSucc
+                </script>
+                            <li class="follow-item clearfix">
+                    <a class="pic fl" href="https://blog.51cto.com/wangwei007" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="68019" src="https://s4.51cto.com/images/blog/202104/14/c60b0428627dc5199c3cac999c3e7a04.jpg" />
+                    </a>
+    
+                    <div class="main">
+                        <h4>
+                            <a href="https://blog.51cto.com/wangwei007" target="_blank">王伟</a>
+                                                                            <a id="checkFollow_68019" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+                        <div class="follow-data">
+                            832.6万&nbsp;人气&nbsp;·&nbsp;189&nbsp;原创&nbsp;·&nbsp;554&nbsp;赞
+                        </div>
+                    </div>
+    
+                </li>
+                <script>
+                    FollowBtn = new Follow($('#checkFollow_68019'),'68019','1',['on','in','mutual','off'])
+                    FollowBtn.success=FollowBtnSucc
+                </script>
+                            <li class="follow-item clearfix">
+                    <a class="pic fl" href="https://blog.51cto.com/alex4dream" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="10996243" src="https://s4.51cto.com/images/blog/202106/09/1b7d2bd8d5f830e34cec324ce13b0ecc.jpg" />
+                    </a>
+    
+                    <div class="main">
+                        <h4>
+                            <a href="https://blog.51cto.com/alex4dream" target="_blank">李浩宇</a>
+                                                                            <a id="checkFollow_10996243" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+                        <div class="follow-data">
+                            20.6万&nbsp;人气&nbsp;·&nbsp;262&nbsp;原创&nbsp;·&nbsp;27&nbsp;赞
+                        </div>
+                    </div>
+    
+                </li>
+                <script>
+                    FollowBtn = new Follow($('#checkFollow_10996243'),'10996243','1',['on','in','mutual','off'])
+                    FollowBtn.success=FollowBtnSucc
+                </script>
+                            <li class="follow-item clearfix">
+                    <a class="pic fl" href="https://blog.51cto.com/u_11949039" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="11939039" src="https://s4.51cto.com/images/blog/202106/29/d2a79c825fa7f983855f0bfeeb12c401.jpg" />
+                    </a>
+    
+                    <div class="main">
+                        <h4>
+                            <a href="https://blog.51cto.com/u_11949039" target="_blank">李运辰</a>
+                                                                            <a id="checkFollow_11939039" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+                        <div class="follow-data">
+                            17.4万&nbsp;人气&nbsp;·&nbsp;253&nbsp;原创&nbsp;·&nbsp;4&nbsp;赞
+                        </div>
+                    </div>
+    
+                </li>
+                <script>
+                    FollowBtn = new Follow($('#checkFollow_11939039'),'11939039','1',['on','in','mutual','off'])
+                    FollowBtn.success=FollowBtnSucc
+                </script>
+                            <li class="follow-item clearfix">
+                    <a class="pic fl" href="https://blog.51cto.com/u_15175878" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="15165878" src="https://s4.51cto.com/images/blog/202105/24/a9b66029b487af4309409358254e5e21.png" />
+                    </a>
+    
+                    <div class="main">
+                        <h4>
+                            <a href="https://blog.51cto.com/u_15175878" target="_blank">万俊峰</a>
+                                                                            <a id="checkFollow_15165878" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+                        <div class="follow-data">
+                            13.4万&nbsp;人气&nbsp;·&nbsp;81&nbsp;原创&nbsp;·&nbsp;26&nbsp;赞
+                        </div>
+                    </div>
+    
+                </li>
+                <script>
+                    FollowBtn = new Follow($('#checkFollow_15165878'),'15165878','1',['on','in','mutual','off'])
+                    FollowBtn.success=FollowBtnSucc
+                </script>
+                        </ul>
+        </div>
+            <!-- //推荐作者 end -->
+    
+        <!-- 企业博客 start -->
+            <div class="Box Box-tong">
+                <h3 class="Box-tit Box-tit-tong">
+                    企业博客
+                    <a href="https://blog.51cto.com/enterprise-commend" target="_blank" class="more">
+                        <i>更多</i>
+                        <span class="hover-arr"></span>
+                    </a>
+                </h3>
+                            <li class="follow-item clearfix">
+                    <a class="pic" href="https://blog.51cto.com/harmonyos" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="14891125" src="https://ucenter.51cto.com/avatar.php?uid=14891125&size=small" />
+                    </a>
+                    <div class="main">
+                        <h4 class="clearfix">
+                            <a class="name" href="https://blog.51cto.com/harmonyos" target="_blank">HarmonyOS技术社区</a>
+                            <span class="icon_firm"><img src="https://static1.51cto.com/edu/blog/images/newhome/firm.png"></span>
+                                                                            <a id="checkFollowFirm_14891125" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+    
+                        <div class="follow-data">70万&nbsp;人气&nbsp;·&nbsp;131&nbsp;原创&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <script>
+                        FollowBtn = new Follow($('#checkFollowFirm_14891125'),'14891125','1',['on','in','mutual','off'])
+                        FollowBtn.success=FollowBtnSucc
+                  </script>
+                </li>
+                            <li class="follow-item clearfix">
+                    <a class="pic" href="https://blog.51cto.com/13778063" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="13768063" src="https://ucenter.51cto.com/avatar.php?uid=13768063&size=small" />
+                    </a>
+                    <div class="main">
+                        <h4 class="clearfix">
+                            <a class="name" href="https://blog.51cto.com/13778063" target="_blank">阿里巴巴云原生</a>
+                            <span class="icon_firm"><img src="https://static1.51cto.com/edu/blog/images/newhome/firm.png"></span>
+                                                                            <a id="checkFollowFirm_13768063" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+    
+                        <div class="follow-data">65.5万&nbsp;人气&nbsp;·&nbsp;500&nbsp;原创&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <script>
+                        FollowBtn = new Follow($('#checkFollowFirm_13768063'),'13768063','1',['on','in','mutual','off'])
+                        FollowBtn.success=FollowBtnSucc
+                  </script>
+                </li>
+                            <li class="follow-item clearfix">
+                    <a class="pic" href="https://blog.51cto.com/14120339" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="14110339" src="https://ucenter.51cto.com/avatar.php?uid=14110339&size=small" />
+                    </a>
+                    <div class="main">
+                        <h4 class="clearfix">
+                            <a class="name" href="https://blog.51cto.com/14120339" target="_blank">腾讯云原生</a>
+                            <span class="icon_firm"><img src="https://static1.51cto.com/edu/blog/images/newhome/firm.png"></span>
+                                                                            <a id="checkFollowFirm_14110339" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+    
+                        <div class="follow-data">21.4万&nbsp;人气&nbsp;·&nbsp;95&nbsp;原创&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <script>
+                        FollowBtn = new Follow($('#checkFollowFirm_14110339'),'14110339','1',['on','in','mutual','off'])
+                        FollowBtn.success=FollowBtnSucc
+                  </script>
+                </li>
+                            <li class="follow-item clearfix">
+                    <a class="pic" href="https://blog.51cto.com/cnsend" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="14026626" src="https://ucenter.51cto.com/avatar.php?uid=14026626&size=small" />
+                    </a>
+                    <div class="main">
+                        <h4 class="clearfix">
+                            <a class="name" href="https://blog.51cto.com/cnsend" target="_blank">森大科技</a>
+                            <span class="icon_firm"><img src="https://static1.51cto.com/edu/blog/images/newhome/firm.png"></span>
+                                                                            <a id="checkFollowFirm_14026626" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+    
+                        <div class="follow-data">4.9万&nbsp;人气&nbsp;·&nbsp;45&nbsp;原创&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <script>
+                        FollowBtn = new Follow($('#checkFollowFirm_14026626'),'14026626','1',['on','in','mutual','off'])
+                        FollowBtn.success=FollowBtnSucc
+                  </script>
+                </li>
+                            <li class="follow-item clearfix">
+                    <a class="pic" href="https://blog.51cto.com/15302993" target="_blank">
+                        <img class="is-vip-img is-vip-img-0" data-uid="15292993" src="https://ucenter.51cto.com/avatar.php?uid=15292993&size=small" />
+                    </a>
+                    <div class="main">
+                        <h4 class="clearfix">
+                            <a class="name" href="https://blog.51cto.com/15302993" target="_blank">OPPO数智技术</a>
+                            <span class="icon_firm"><img src="https://static1.51cto.com/edu/blog/images/newhome/firm.png"></span>
+                                                                            <a id="checkFollowFirm_15292993" class="follow-1 checkFollow on">关注</a>
+                                                                        </h4>
+    
+                        <div class="follow-data">9164&nbsp;人气&nbsp;·&nbsp;11&nbsp;原创&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <script>
+                        FollowBtn = new Follow($('#checkFollowFirm_15292993'),'15292993','1',['on','in','mutual','off'])
+                        FollowBtn.success=FollowBtnSucc
+                  </script>
+                </li>
+                        </ul>
+        </div>
+            <!-- //企业博客 end -->
+    
+        <!-- 近期原创 -->
+            <div class="Box">
+            <h3 class="Box-tit">
+                近期原创
+                <a href="https://blog.51cto.com/nav" class="more" target="_blank">
+                    <i>更多</i>
+                    <span class="hover-arr"></span>
+                </a>
+            </h3>
+            <ul class="original">
+                                        <li>
+                    <a href="https://blog.51cto.com/u_11475121/3369303" target="_blank">【温故知新】分布式事务及分布式锁系列文章总结【石杉的架构笔记】</a>
+                    <span class="creat-time">6分钟前</span>
+                </li>
+                                        <li>
+                    <a href="https://blog.51cto.com/u_11475121/3369301" target="_blank">亿级流量架构系列专栏总结【石杉的架构笔记】</a>
+                    <span class="creat-time">8分钟前</span>
+                </li>
+                                        <li>
+                    <a href="https://blog.51cto.com/u_13294304/3369291" target="_blank">一周内B站疯转5.6W次，好东西呀！</a>
+                    <span class="creat-time">16分钟前</span>
+                </li>
+                                        <li>
+                    <a href="https://blog.51cto.com/u_15268104/3369093" target="_blank">素雅中国风动态PPT-朴尔PPT</a>
+                    <span class="creat-time">18分钟前</span>
+                </li>
+                                        <li>
+                    <a href="https://blog.51cto.com/u_15288275/3369092" target="_blank">睿赛德设立RT-Thread企业专项奖，助力“兆易创新杯”第十三届中国研究生电子设计竞赛</a>
+                    <span class="creat-time">19分钟前</span>
+                </li>
+                                                                                    </ul>
+        </div>
+        
+            <!-- 优质好课 -->
+        <div class="Box columnList cxhk0622">
+            <h3 class="Box-tit">
+                优质好课
+                <a href="https://edu.51cto.com/ranking/195-new.html?qd=blogyctj" target="_blank" class="more">
+                    <i>更多</i>
+                    <span class="hover-arr"></span>
+                </a>
+            </h3>
+            <div class="list">
+                <ul class="seven-list">
+                                    <li class="s1">
+                        <a class="columnImage cloumn-tab-par" href="http://edu.51cto.com/course/27965.html?qd=blogyctj" target="_blank">
+                            <img src="https://s1.51ctocdn.cn/images/avater/202106/c53194110cc6cf0f2e97529417334c54255bb2.jpg" alt="YOLOv5+DeepSORT多目标跟踪与计数精讲">
+                        </a>
+                        <div class="rightContent">
+                            <a href="http://edu.51cto.com/course/27965.html?qd=blogyctj" target="_blank">
+                                <p class="columnTitle">YOLOv5+DeepSORT多目标跟踪与计数精讲</p>
+                                <div class="cxhk_online_num">1527人学习</div>
+                                <div class="jion-group-btn">开始学习 </div>
+                            </a>
+                        </div>
+                    </li>
+                                    <li class="s1">
+                        <a class="columnImage cloumn-tab-par" href="http://edu.51cto.com/course/27474.html?qd=blogyctj" target="_blank">
+                            <img src="https://s1.51ctocdn.cn/images/avater/202103/b7062fe4361031c8fc17505be8eba437f5e73c.jpg" alt="零基础深度学习爬虫验证码识别">
+                        </a>
+                        <div class="rightContent">
+                            <a href="http://edu.51cto.com/course/27474.html?qd=blogyctj" target="_blank">
+                                <p class="columnTitle">零基础深度学习爬虫验证码识别</p>
+                                <div class="cxhk_online_num">2318人学习</div>
+                                <div class="jion-group-btn">开始学习 </div>
+                            </a>
+                        </div>
+                    </li>
+                                    <li class="s1">
+                        <a class="columnImage cloumn-tab-par" href="http://edu.51cto.com/course/27470.html?qd=blogyctj" target="_blank">
+                            <img src="https://s1.51ctocdn.cn/images/avater/202103/638de520855b18449644472c3999bbef28d1b0.jpg" alt="深入理解 GPU 计算: CUDA 编程指南">
+                        </a>
+                        <div class="rightContent">
+                            <a href="http://edu.51cto.com/course/27470.html?qd=blogyctj" target="_blank">
+                                <p class="columnTitle">深入理解 GPU 计算: CUDA 编程指南</p>
+                                <div class="cxhk_online_num">1676人学习</div>
+                                <div class="jion-group-btn">开始学习 </div>
+                            </a>
+                        </div>
+                    </li>
+                                </ul>
+            </div>
+        </div>
+            <!-- // 优质好课 end -->
+        <!-- fix right -->
+        <div class="fixright">
+            <!-- 博客热榜 -->
+                    <div class="Box Box-tong">
+                <h3 class="Box-tit Box-tit-tong Box-tit-hot">
+                    博客<i class="titred">热榜</i>
+                    <a href="https://blog.51cto.com/ranking/hot" target="_blank" class="more">
+                        <i>查看完整榜单</i>
+                        <span class="hover-arr"></span>
+                    </a>
+                </h3>
+                <div>
+                                <a href="https://blog.51cto.com/15323393/3295066" class="hotblog_item" target="_blank">
+                        <div class="itemdiv">
+                            <span class="hotnum font_din">
+                               1                            </span>
+                            <strong class="hot-tit">Spring框架中一个很有意思的小组件：Spring Retry</strong>
+                            <p class="hit-txt">1、概述SpringRetry是Spring框架中的一个组件，它提供了自动重新调用失败操作的能力。这在错误可能是暂时发生的（如瞬时网络故障）的情况下很有帮助。在本文中，我们将看到使用SpringRetry的各种方式：注解、RetryTemplate以及回调。2、Maven依赖让我们首先将springretry依赖项添加到我们的pom.xml文件中：&lt;dependency&lt;groupIdorg.sp</p>
+                        </div>
+                    </a>
+                                <a href="https://blog.51cto.com/xcbeyond/3328506" class="hotblog_item" target="_blank">
+                        <div class="itemdiv">
+                            <span class="hotnum font_din">
+                               2                            </span>
+                            <strong class="hot-tit">如何成为一名架构师？</strong>
+                            <p class="hit-txt">最近有小伙伴，问我：“你是如何过段转变到架构师的？”
+    
+    今天就该问题和大家分享一下，与君共勉！
+    
+    想要成为一个架构师是每位程序员的目标，那么如何成为一名架构师呢？
+    </p>
+                        </div>
+                    </a>
+                                <a href="https://blog.51cto.com/15249901/3301698" class="hotblog_item" target="_blank">
+                        <div class="itemdiv">
+                            <span class="hotnum font_din">
+                               3                            </span>
+                            <strong class="hot-tit">MySQL快速入门使用！！！#导入MD文档图片#</strong>
+                            <p class="hit-txt">@toc(目录)连接MySQLmysqlmysqlurootp;//登录语句Enterpassword://提示输入密码查看当前数据库mysqlshowdatabases;例如：mysqlmysqlshowdatabases;Databasechatgroupinformation_schemamysqlperformance_schemasysuser6rowsinset(0.01sec)其中，</p>
+                        </div>
+                    </a>
+                                <a href="https://blog.51cto.com/14279308/3295249" class="hotblog_item" target="_blank">
+                        <div class="itemdiv">
+                            <span class="hotnum font_din">
+                               4                            </span>
+                            <strong class="hot-tit">掌握6大模块、7个核心概念！帮你搞定Mycat中间件#导入MD文档图片#</strong>
+                            <p class="hit-txt">近今年里随着经济的飞速发展，企业的业务也在不断膨胀，作为业务支撑的信息系统特别是数据库系统也面临前所未有的压力，行业应用所产生的数据呈爆炸式地增长。数据从原来的GB级别迅速增常到TB甚至是PB的规模，已经远远超过传统计算技术的要求，原来集中式的存储方式已经无法满足数据存储的要求，此时分布式数据存储由于良好的透明性、数据冗余性、扩展性、自治性逐渐进入人们的视野。为了更好的使用和管理分布式数据库，业内推出了不少优秀的分布式数据库中间件，Mycat就是其中之一，今天就来看看Mycat的架构和实现原理。</p>
+                        </div>
+                    </a>
+                                <a href="https://blog.51cto.com/xcbeyond/3289175" class="hotblog_item" target="_blank">
+                        <div class="itemdiv">
+                            <span class="hotnum font_din">
+                               5                            </span>
+                            <strong class="hot-tit">#导入MD文档图片构建基于Spring Cloud向Service Mesh框架迁移的解决方案及思路</strong>
+                            <p class="hit-txt">作为新一代微服务架构体系，Service Mesh 技术有效地解决了 Spring Cloud 微服务架构和服务治理过程中的痛点问题，一经推出便引起了很大的反响。今天我们就针对构建基于 Spring Cloud 向 Service Mesh 框架迁移过程中的诸多问题展开讨论，尽可能提供一套完善的解决方案和迁移思路，供大家参考。</p>
+                        </div>
+                    </a>
+                            </div>
+    
+            </div>
+                    <!-- 右侧首页 列表页-->
+                    <div class="Box about">
+                <h3 class="Box-tit">
+                    关于我们
+                </h3>
+                <table class="aboutList">
+                    <tr>
+                        <td><a href="https://blog.51cto.com/51ctoblog" target="_blank">官方博客</a></td>
+    
+                        <td><a href="https://blog.51cto.com/51ctoblog/2643377" target="_blank">意见反馈</a></td>
+    
+                        <td><a href="http://www.51cto.com/about/aboutus.html" target="_blank">了解我们</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://blog.51cto.com/nav" target="_blank">全部文章</a></td>
+    
+                        <td><a href="javascript:;" class="zhiCustomBtn">联系我们</a></td>
+                        <td><a href="https://blog.51cto.com/qa/index" target="_blank">博客问答</a></td>
+                    </tr>
+                    <tr>
+                        <!-- <td><a href="https://blog.51cto.com/qa/index" target="_blank">博客问答</a></td> -->
+                        <td><a href="http://www.51cto.com/about/map.html" target="_blank">网站地图</a></td>
+                        <td><a href="https://blog.51cto.com/topic/all" target="_blank">热门标签</a></td>
+                    </tr>
+                </table>
+                <h3 class="Box-tit">
+                    友情链接
+                </h3>
+                <div class="aboutList-2 clearfix ">
+                    <a href="https://harmonyos.51cto.com?blogsitemap" target="_blank">51CTO鸿蒙社区</a>
+                    <a href="https://edu.51cto.com/" target="_blank" style="world-break:keepall">51CTO学堂</a>
+                    <a href="http://www.51cto.com" target="_blank">51CTO</a>
+                </div>
+    
+                <p class="copy">Copyright &copy; 2005-2021 <a href="http://www.51CTO.com" target="_blank">51CTO.COM</a> <br>版权所有 京ICP证060544号</p>
+            </div>
+                 </div>
+        <!-- //fix right -->
+    
+    </aside>
+        </div>
+        <!-- //Page end -->
+    </div>
+    <!-- new-home end -->
+    </body>
+    </html>
+    
