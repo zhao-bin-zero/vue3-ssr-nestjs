@@ -21,10 +21,10 @@ export const market3 = defineComponent({
   // }
   name: 'Market3',
   components: {
-    marketComp: defineAsyncComponent(() => import('@/components/market/index').then((mod)=>mod.marketJsx))
+    marketComp: defineAsyncComponent(() => import('@/components/market/index').then((mod) => mod.marketJsx))
   },
   setup() {
-    let input = ref(' ');
+    let input = ref('');
     const handleChange = (event: Event) => {
       input.value = (event.target as HTMLInputElement).value;
     };

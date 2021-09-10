@@ -9,7 +9,7 @@ import { CatsService } from './cats.service';
  * @class CatsModule
  */
 @Module({
-	controllers: [CatsController],
-	providers: [CatsService]
+  controllers: [CatsController],
+  providers: [CatsService]
 })
-export class CatsModule { }
+export class CatsModule {}

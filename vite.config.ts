@@ -15,7 +15,8 @@ export default {
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'web/src')
+      '@': path.resolve(__dirname, 'web/src'),
+      '@img': path.resolve(__dirname, 'web/src/assets/img')
     }
   }
 } as UserConfig;

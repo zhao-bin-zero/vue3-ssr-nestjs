@@ -22,12 +22,10 @@ import { defineComponent, ref, reactive, h } from 'vue';
 export default defineComponent({
   name: 'Market4',
   setup() {
-    let input = ref(' ');
+    let input = ref('');
     const book = reactive({ title: 'Vue 3 Guide' });
 
-    return () => (
-      h('div', [input.value, book.title])
-    );
+    return () => h('div', [input.value, book.title]);
   }
 });
 </script>

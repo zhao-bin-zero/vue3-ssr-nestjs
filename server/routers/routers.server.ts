@@ -5,10 +5,8 @@
  * @class Routers
  */
 export class Routers {
-
-	/**
-	 * cats router /api/cats/....visit
-	 */
-	public static CATS_MODULE_ROUTER: string = 'cats';
-
+  /**
+   * cats router /api/cats/....visit
+   */
+  public static CATS_MODULE_ROUTER: string = 'cats';
 }

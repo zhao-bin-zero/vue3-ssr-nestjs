@@ -2,16 +2,27 @@
   <market-comp />
   <p>{{ state2 }}</p>
   <p>{{ count }}</p>
+  <p>{{ obj.count }}</p>
   <button @click="add2">增加</button>
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, onMounted, onBeforeMount, onBeforeUnmount, onUnmounted, toRef, reactive, isReactive } from 'vue';
+import {
+  defineAsyncComponent,
+  defineComponent,
+  onMounted,
+  onBeforeMount,
+  onBeforeUnmount,
+  onUnmounted,
+  toRef,
+  reactive,
+  isReactive
+} from 'vue';
 
 export default defineComponent({
   name: 'Markets',
   components: {
-    marketComp: defineAsyncComponent(() => import('@/components/market/index').then((mod)=>mod.marketJsx))
+    marketComp: defineAsyncComponent(() => import('@/components/market/index').then((mod) => mod.marketJsx))
   },
   setup() {
     const obj = reactive({ count: 3 });
@@ -41,12 +52,13 @@ export default defineComponent({
       state2,
       count: obj.count,
       // state2,
-      add2
+      add2,
+      obj
     };
   },
-  asyncData() {
-    console.log('asyncData', 'Markets');
-  },
+  // asyncData() {
+  //   console.log('asyncData', 'Markets');
+  // },
   mounted() {
     console.log('mounted', 'Markets');
   }

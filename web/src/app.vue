@@ -37,6 +37,9 @@ export default defineComponent({
       this.time = new Date().toLocaleString();
     }, 1000);
   }
+  // asyncData({ store }) {
+  //   return store.dispatch('fetchMessage');
+  // }
 });
 </script>
 <style scoped>

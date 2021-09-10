@@ -22,8 +22,8 @@ export default {
     //   console.log('mounted', 'Markets2');
     //   onLoadColumn();
     // });
-
-    let input = ref(' ');
+    // ref('')为空服务端渲染另一个项目会报错，问题在 https://github.com/infernojs/inferno/issues/791，但奇怪的是当前项目正常
+    let input = ref('');
     console.log(input.value);
     // return {
     //   pageSizes

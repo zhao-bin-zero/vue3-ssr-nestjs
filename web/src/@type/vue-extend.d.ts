@@ -11,7 +11,7 @@ export interface IAsyncDataContext {
 }
 declare module '@vue/runtime-core' {
   interface ComponentCustomOptions {
-    asyncData?(context: IAsyncDataContext): void;
+    asyncData?(context: IAsyncDataContext): Promise<any>;
   }
 
   interface ComponentCustomProperties {

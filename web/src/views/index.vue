@@ -12,9 +12,9 @@ export default {
   setup() {
     console.log('setup', 'index');
   },
-  asyncData() {
-    console.log('asyncData', 'index');
-  },
+  // asyncData() {
+  //   console.log('asyncData', 'index');
+  // },
   data() {
     console.log('data', 'index');
     return {

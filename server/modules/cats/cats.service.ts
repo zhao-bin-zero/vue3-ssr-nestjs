@@ -9,26 +9,26 @@ import { ICat } from './interfaces/cat.interface';
  */
 @Injectable()
 export class CatsService {
-	private readonly cats: ICat[] = [];
+  private readonly cats: ICat[] = [];
 
-	/**
-	 * create
-	 *
-	 * @param {ICat} cat
-	 * @returns {*}
-	 * @memberof CatsService
-	 */
-	public create(cat: ICat): any {
-		this.cats.push(cat);
-	}
+  /**
+   * create
+   *
+   * @param {ICat} cat
+   * @returns {*}
+   * @memberof CatsService
+   */
+  public create(cat: ICat): any {
+    this.cats.push(cat);
+  }
 
-	/**
-	 * Find all
-	 *
-	 * @returns {ICat[]}
-	 * @memberof CatsService
-	 */
-	public findAll(): ICat[] {
-		return this.cats;
-	}
+  /**
+   * Find all
+   *
+   * @returns {ICat[]}
+   * @memberof CatsService
+   */
+  public findAll(): ICat[] {
+    return this.cats;
+  }
 }

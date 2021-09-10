@@ -29,9 +29,9 @@ export default defineComponent({
   setup() {
     console.log('setup', 'user');
   },
-  asyncData() {
-    console.log('asyncData', 'user');
-  },
+  // asyncData() {
+  //   console.log('asyncData', 'user');
+  // },
   data() {
     console.log('data', 'user');
     return {

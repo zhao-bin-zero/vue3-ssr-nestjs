@@ -9,7 +9,10 @@ export default function () {
       {
         path: '/',
         name: 'index',
-        component: () => import('@/views/index.vue')
+        component: () => import('@/views/index.vue'),
+        meta: {
+          title: 'index title'
+        }
       },
       {
         path: '/user',
@@ -29,12 +32,20 @@ export default function () {
       {
         path: '/market3',
         name: 'market3',
-        component: () => import('@/views/market3').then((mod)=>mod.market3)
+        component: () => import('@/views/market3').then((mod) => mod.market3)
       },
       {
         path: '/market4',
         name: 'market4',
         component: () => import('@/views/market4.vue')
+      },
+      {
+        path: '/:catchAll(.*)*',
+        name: '404',
+        component: () => import('@/components/NotFound.vue'),
+        meta: {
+          title: '404 Not Found'
+        }
       }
     ]
   });

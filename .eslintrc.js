@@ -1,3 +1,4 @@
+// ESLint 主要解决的是代码质量问题
 module.exports = {
   root: true, // 默认会一直往上寻找配置文件直到根目录
   env: {
@@ -7,19 +8,19 @@ module.exports = {
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',  // typescript代码解析器的引擎
-    ecmaVersion: 2020,  // Allows for the parsing of modern ECMAScript features
+    parser: '@typescript-eslint/parser', // typescript代码解析器的引擎
+    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module',
     ecmaFeatures: {
       tsx: true,
-      jsx: true   // Allows for the parsing of JSX
+      jsx: true // Allows for the parsing of JSX
     }
   },
   extends: [
     'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended',  // //定义文件继承的子规范 from the @typescript-eslint/eslint-plugin
+    'plugin:@typescript-eslint/recommended', // 定义文件继承的子规范 from the @typescript-eslint/eslint-plugin
     // 'prettier/@typescript-eslint', // 使得@typescript-eslint中的样式规范失效，遵循prettier中的样式规范
-    'plugin:prettier/recommended', // 使用prettier中的样式规范，且如果使得ESLint会检测prettier的格式问题，同样将格式问题以error的形式抛出
+    'plugin:prettier/recommended' // 使用prettier中的样式规范，且如果使得ESLint会检测prettier的格式问题，同样将格式问题以error的形式抛出
   ],
   rules: {
     camelcase: 0,
@@ -135,6 +136,15 @@ module.exports = {
         },
         svg: 'always',
         math: 'always'
+      }
+    ],
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        extendDefaults: true,
+        types: {
+          '{}': false
+        }
       }
     ]
   }

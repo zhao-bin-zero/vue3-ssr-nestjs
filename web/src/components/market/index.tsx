@@ -1,6 +1,5 @@
 import { useStore } from '@/store';
 import { defineComponent } from 'vue';
-import '@/styles/market/index.scss';
 
 export const marketJsx = defineComponent({
   name: 'MarketJsx',

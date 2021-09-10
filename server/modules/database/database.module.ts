@@ -6,9 +6,9 @@ import { databaseProviders } from './database.providers';
  * @description Module
  */
 @Module({
-	providers: [...databaseProviders],
-	exports: [...databaseProviders]
+  providers: [...databaseProviders],
+  exports: [...databaseProviders]
 })
 export class DataBaseModule {
-	// hole
+  // hole
 }
