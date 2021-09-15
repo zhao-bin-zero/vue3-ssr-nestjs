@@ -10,11 +10,16 @@ import { AppService } from './app.service';
 @Controller()
 export class AppController {
   constructor(private appService: AppService) {}
-  // tslint:disable-next-line:completed-docs
+  @Get()
+  getHello(): string {
+    return this.appService.getHello();
+  }
+
   @Get('/test')
   public test(): string {
     return this.appService.test();
   }
+
   @Get('/find')
   public async findAll(): Promise<string> {
     return this.appService.findAll();

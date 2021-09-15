@@ -110,7 +110,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-empty-function': 0,
     '@typescript-eslint/member-ordering': [
-      2,
+      0,
       {
         default: [
           'constructor',

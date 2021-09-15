@@ -5,6 +5,8 @@ import { AppModule } from './app.module';
 import ssrServer from './ssr/ssr.server';
 import { SsrFilter } from './ssr/ssr.filter';
 
+// declare const module: any;
+
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   console.log(process.env.NODE_ENV);
@@ -14,6 +16,12 @@ async function bootstrap(): Promise<void> {
   await app.listen('8888', '', () => {
     console.log('程序启动');
   });
+
+  // webpack热重载
+  // if (module.hot) {
+  //   module.hot.accept();
+  //   module.hot.dispose(() => app.close());
+  // }
 }
 
 bootstrap().catch((err) => {

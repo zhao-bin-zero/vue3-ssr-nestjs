@@ -6,6 +6,10 @@ export class AppService {
     console.log(1);
   }
 
+  getHello(): string {
+    return 'Hello World1!';
+  }
+
   test() {
     return 'test.';
   }

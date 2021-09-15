@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Param, Post, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+// import { Body, Controller, Get, Param, Post, UseGuards, UseInterceptors } from '@nestjs/common';
 // import { Roles } from '../../common/decorators/CommonRolesDecorator';
 // import { RolesGuard } from '../../common/guards/CommonRolesGuard';
 // import { LoggingInterceptor } from '../../common/interceptors/CommonLoggingInterceptor';
@@ -6,8 +7,8 @@ import { Body, Controller, Get, Param, Post, UseGuards, UseInterceptors } from '
 // import { ParseIntPipe } from '../../common/pipes/CommonParseIntPipe';
 import { Routers } from '../../routers/routers.server';
 import { CatsService } from './cats.service';
-import { CreateCatDto } from './dto/create-cat.dto';
-import { ICat } from './interfaces/cat.interface';
+// import { CreateCatDto } from './dto/create-cat.dto';
+// import { ICat } from './interfaces/cat.interface';
 
 /**
  * Cats controller

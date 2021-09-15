@@ -11,8 +11,9 @@ class SsrServer {
   private isTest: boolean;
   private isProd: boolean;
   private vueTemplate: string;
-  private manifest: object;
+  private manifest: {};
   private vite: any;
+
   constructor() {
     this.isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD;
     this.isProd = process.env.NODE_ENV === 'production';
